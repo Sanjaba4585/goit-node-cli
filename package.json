@@ -1,0 +1,14 @@
+{
+  "dependencies": {
+    "commander": "^12.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.3"
+  },
+  "name": "src",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "start:dev": "nodemon index"
+  }
+}
