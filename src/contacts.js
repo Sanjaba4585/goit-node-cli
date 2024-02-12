@@ -11,10 +11,6 @@ async function readContacts() {
   return JSON.parse(data);
 }
 
-function writeContacts(contacts) {
-  return fs.writeFile(contactsPath, JSON.stringify(contacts, undefined, 2));
-}
-
 async function listContacts() {
   const contacts = await readContacts();
   return contacts;
