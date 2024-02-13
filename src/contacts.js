@@ -11,6 +11,10 @@ async function readContacts() {
   return JSON.parse(data);
 }
 
+function writeContacts(contacts) {
+  return fs.writeFile(contactsPath, JSON.stringify(contacts, undefined, 2));
+}
+
 async function listContacts() {
   const contacts = await readContacts();
   return contacts;
@@ -38,7 +42,7 @@ async function removeContact(contactId) {
     return null;
   }
   const [result] = contacts.splice(index, 1);
-  await fs.writeFile(contactsPath, JSON.stringify(contacts, null, 2));
+  await writeContacts(contacts, null, 2);
   return result;
 }
 module.exports = {
